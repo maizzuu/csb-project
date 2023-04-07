@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>create</title>
+  </head>
+  <body>
+    <form action="/create/" method="POST">
+      {%csrf_token%}
+      <h2>create an account</h2>
+      <p>username:</p>
+      <input type="text" name="username" />
+      <p>password:</p>
+      <input type="password" name="password" />
+      <p>
+        <button type="submit">create</button>
+      </p>
+    </form>
+  </body>
+</html>

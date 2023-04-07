@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Hi</title>
+  </head>
+
+  <body>
+    {% if username %}
+    <p>Logged in as {{username}}</p>
+    <a href="/logout">Logout</a>
+    {% else %}
+    <p>Would you like to login to an account?</p>
+    <a href="/loginView">Login</a>
+    <p>Would you like to create an account?</p>
+    <a href="/create">Create</a>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>User</title>
+  </head>
+
+  <body>
+    {% if user %}
+    <h1>Hello {{user.username}}</h1>
+    <p>Your password is <b>{{user.password}}</b></p>
+    {% else %}
+    <p>No user with username {{name}}</p>
+    {% endif %}
+    <a href="/">Back to the start</a>
+  </body>
+</html>
