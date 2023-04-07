@@ -29,9 +29,6 @@ def user(request):
 def login(request):
     if request.method == 'POST':
         try:
-            # A07:2021 – Identification and Authentication Failures
-            # weak passwords allowed, same username and password allowed
-            # fix by adding some type of password analysis / check
             username = request.POST.get('username')
             password = request.POST.get('password')
             user = User.objects.get(username=username)
@@ -74,6 +71,9 @@ def create(request):
         # fix by using some kind of encryption
         user = User(username=request.POST.get('username'),
                     password=request.POST.get('password'))
+        # A07:2021 – Identification and Authentication Failures
+        # weak passwords allowed, same username and password allowed
+        # fix by adding some type of password analysis / check
         user.save()
         request.session['user'] = user.username
         return redirect('/')

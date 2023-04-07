@@ -6,6 +6,7 @@
   <body>
     {% if username %}
     <p>Logged in as {{username}}</p>
+    <a href="/user/?name={{username}}">Check your password</a>
     <a href="/logout">Logout</a>
     {% else %}
     <p>Would you like to login to an account?</p>
