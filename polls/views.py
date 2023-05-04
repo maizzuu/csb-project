@@ -8,7 +8,11 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    current = request.session['user']
+    current = None
+    try:
+        current = request.session['user']
+    except KeyError:
+        request.session['user'] = None
     return render(request, 'polls/index.html', {'username': current})
 
 
